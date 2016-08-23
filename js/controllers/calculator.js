@@ -47,7 +47,7 @@ var controllers = angular.module('calculator-app.controller', [])
 
 	$scope.result = function() {
 
-		if ($scope.subTotal == "") {
+		if ($scope.subTotal == "" || isNaN(parseFloat($scope.subTotal))) {
 			return;
 		}
 
@@ -67,6 +67,10 @@ var controllers = angular.module('calculator-app.controller', [])
 		default:
 			return;
 		}		
+
+		if (isNaN($scope.total)) {
+			$scope.total = 0;
+		}
 
 		if ($scope.total > 999999999999) {
 			$scope.total = 999999999999;

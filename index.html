@@ -80,33 +80,34 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <script>
-      $(window).keypress(function(event) {
+
+      document.getElementById('calculator').onkeypress = function(event) {
 
         // Create shortcut for digits
-        if (event.keyCode >= 48 && event.keyCode <= 57) {
+        if (event.charCode >= 48 && event.charCode <= 57) {
           document.getElementById('bnt-' + event.key).click();
         }
 
         // Create shortcut for operations
-        if (event.keyCode == 42 || event.keyCode == 43 || event.keyCode == 45 || event.keyCode == 47 || event.keyCode == 61) {
-          document.getElementById('bnt-' + event.keyCode).click();
+        if (event.charCode == 42 || event.charCode == 43 || event.charCode == 45 || event.charCode == 47 || event.charCode == 61) {
+          document.getElementById('bnt-' + event.charCode).click();
         }
 
         // Create shortcut for return to get the result
-        if (event.keyCode == 13) {
+        if (event.charCode == 13) {
           document.getElementById('bnt-result').click();
         }
 
         // Create shortcut for C or c to clear
-        if (event.keyCode == 99 || event.keyCode == 67) {
+        if (event.charCode == 99 || event.charCode == 67) {
           document.getElementById('bnt-clear').click();
         }
 
         // Create shortcut for dot
-        if (event.keyCode == 44 || event.keyCode == 46) {
+        if (event.charCode == 44 || event.charCode == 46) {
           document.getElementById('bnt-dot').click();
-        }        
-      });
+        }           
+      }
     </script>
 
   </body>
